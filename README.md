@@ -22,7 +22,7 @@ We made our initial segmentation working with the the bedroom picture under the 
 
 We are working in Ubuntu and each python program is driven from an xterm command line using 'python xxxx.py' as the command. 
 
-This second repository is similar to another Keras application repository found here except we are be using the kMean clusters for image segmentation as presented by Vidhya for our final image segmentation. This kMean method reduces some noise in the isolation of features as what is shown below using just the just the load_pretrain_and_create_image.py for segmentation:
+This second repository is similar to another Keras application repository found here except we are be using the kMean clusters for image segmentation as presented by Vidhya for our final image segmentation. This kMean method reduces some noise in the isolation of features as what is shown below using just pixel value thresholds for segmentation:
 
 ![Image](bed_nocluster_labels.png)
 
