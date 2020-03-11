@@ -1,9 +1,9 @@
 # Basic-image-segmentation-keras-with-kMean-clusters-as-pesented-by-Vidhya
-kMean clusters used for final labeling of segments based on the repository of Divamgupta.
+kMean clusters from Vidhya used for final labeling of segments. This repository is based on the repository of Divam Gupta.
 
 https://github.com/divamgupta/image-segmentation-keras
 
-This repository is based on studying Divamgupta's GitHub repository, blog and other written materials that we have found online. This is great work and a real help to a novice such as myself. We will be creating a few repositories using my interpretation of how this all might be implemented. I might be wrong, so any constructive criticism is welcome. We are still using Divamgupta's pre-trained example shown in his Readme file. 
+This repository is based on studying Divam Gupta's GitHub repository, blog and other written materials that we have found online. This is great work and a real help to a novice such as myself. We will be creating a few repositories using my interpretation of how this all might be implemented. I might be wrong, so any constructive criticism is welcome. We are still using Divamgupta's pre-trained example shown in his Readme file. 
 
 The following is the original photo that we are working from:
 
