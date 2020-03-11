@@ -9,7 +9,7 @@ The following is the original photo that we are working from:
 
 ![Image](1_input.jpg)
 
-We use the pre-trained code to create our segmentation using load_pretrain_and_create_image.py driven from an xterm. We then use interactive_plots_clusters_with_box.py to discriminate the various predicted clusters and isolate on the one item that we want. 
+We use the pre-trained code to create our segmentation using load_pretrain_and_create_image.py driven from an xterm. We then use interactive_plots_clusters_with_box.py to discriminate the various predicted clusters and isolate on the one item that we are interested in. 
 
 ![Image](cluster_pic.png)
 
@@ -20,8 +20,8 @@ We made our initial segmentation working with the the bedroom picture under the 
 
 ![Image](bed_cluster_labels_box.png)
 
-We are working in Ubuntu and each python .py program is driven from an xterm using 'python xxxx.py' as the command. 
+We are working in Ubuntu and each python program is driven from an xterm command line using 'python xxxx.py' as the command. 
 
-This second repository is similar to another Keras application repository except we are be using the kMean clusters for image segmentation as presented by Vidhya for image segmentation. 
+This second repository is similar to another Keras application repository found here except we are be using the kMean clusters for image segmentation as presented by Vidhya for our final image segmentation. 
 
 
