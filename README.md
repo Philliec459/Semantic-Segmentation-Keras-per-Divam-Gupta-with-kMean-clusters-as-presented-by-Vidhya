@@ -3,26 +3,46 @@ kMean clusters from Vidhya used for final labeling of segments. This repository 
 
 https://github.com/divamgupta/image-segmentation-keras
 
-This repository is based on studying Divam Gupta's GitHub repository, blog and other written materials that we have found online. This is great work and a real help to a novice such as myself. We will be creating a few repositories using my interpretation of how this all might be implemented. I might be wrong, so any constructive criticism is welcome. We are still using Divamgupta's pre-trained example shown in his Readme file. 
+This repository is based on studying Divam Gupta's GitHub repository, blog and other written materials that we have found online. This is great work and a real help to a novice such as myself. 
 
-The following is the original photo that we are working from:
+The following is the original photo that we are working from found in "sample_images/1_input.jpg":
 
 ![Image](1_input.jpg)
 
-We use the pre-trained code to create our segmentation using load_pretrain_and_create_image.py driven from an xterm. We then use interactive_plots_clusters_with_box.py to discriminate the various predicted clusters and isolate on the one item that we are interested in. 
+We use the pre-trained code provided by Divam to create our segmentation of this bedroom image using the python load_pretrain_and_create_image.py program driven with a command line from an xterm. 
+
+  model = pspnet_50_ADE_20K() # in between detail - load the pretrained model trained on ADE20k dataset
+
+  #model = pspnet_101_cityscapes() # too much detail - load the pretrained model trained on Cityscapes dataset
+
+  #model = pspnet_101_voc12() # Just the People - load the pretrained model trained on Pascal VOC 2012 dataset
+
+  #### model = load_model('vgg_unet_1.h5')
+
+  # Use any of the 3 pretrained models above
+
+  out = model.predict_segmentation(
+      inp="sample_images/1_input.jpg",
+      out_fname="bed_out.png"
+  )
+
+We then used the python program interactive_plots_clusters_with_box.py to created dscrete clusters using kMean as presented by Vidhya.
+
+  kmeans = KMeans(n_clusters=20, random_state=0).fit(pic_n)
+  pic2show = kmeans.cluster_centers_[kmeans.labels_]
+
+The program is then used to discriminate the various predicted clusters and isolate on the segmented item that we are trying to isloate. 
 
 ![Image](cluster_pic.png)
 
-With this program we can interactively select the pixel value associated with a particular cluster or segment in the photograph that we are trying to isolate. The python program is interactive_plots_clusters_with_box.py 
 
-We made our initial segmentation working with the the bedroom picture under the sample_images subdirectory (1_input.jpg). After discriminating all of the major features in the photo as shown above, we then isolate a particular item in the picture (bed), and create a subsequent image showing just that feature with a green rectangle around it. 
-
+We made our initial segmentation working with the the bedroom picture under the sample_images subdirectory (1_input.jpg). After discriminating all of the major features in the provided image as shown above, we then isolate the picture (bed) as our key feature, and then create a subsequent image showing just that feature with a green rectangle around it. 
 
 ![Image](bed_cluster_labels_box.png)
 
 We are working in Ubuntu and each python program is driven from an xterm command line using 'python xxxx.py' as the command. 
 
-This second repository is similar to another Keras application repository found here except we are be using the kMean clusters for image segmentation as presented by Vidhya for our final image segmentation. This kMean method reduces some noise in the isolation of features as what is shown below using just pixel value thresholds for segmentation:
+This second repository is similar to another Keras application repository found in this GitHub except that we are be using the kMean clusters to finalize our image segmentation process as presented by Vidhya. By using this kMean method we can reduce some noise found with just pixel value thresholds for the segmentation. sometimes the bed pixel values can also be found in the transitions from one segment to the next. kMean appears to reduce this noise. 
 
 ![Image](bed_nocluster_labels.png)
 
