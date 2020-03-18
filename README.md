@@ -11,16 +11,12 @@ The following is the original photo that we are working from found in "sample_im
 
 We use the pre-trained code provided by Divam to create our segmentation of this bedroom image using the python load_pretrain_and_create_image.py program driven with a command line from an xterm. 
 
-model = pspnet_50_ADE_20K() # in between detail - load the pretrained model trained on ADE20k dataset
-#model = pspnet_101_cityscapes() # too much detail - load the pretrained model trained on Cityscapes dataset
-#model = pspnet_101_voc12() # Just the People - load the pretrained model trained on Pascal VOC 2012 dataset
+    model = pspnet_50_ADE_20K() # in between detail - load the pretrained model trained on ADE20k dataset
 
-#Use any of the 3 pretrained models above
-
-out = model.predict_segmentation(
-    inp="sample_images/1_input.jpg",
-    out_fname="bed_out.png"
-)
+    out = model.predict_segmentation(
+        inp="sample_images/1_input.jpg",
+        out_fname="bed_out.png"
+    )
 
 We then use the python program interactive_plots_clusters_with_box.py to created dscrete clusters segmentations using kMean as presented by Vidhya.
 
