@@ -20,8 +20,9 @@ We use the pre-trained code provided by Divam to create our segmentation of this
 
 We then use the python program interactive_plots_clusters_with_box.py to created dscrete clusters segmentations using kMean as presented by Vidhya.
 
-  kmeans = KMeans(n_clusters=20, random_state=0).fit(pic_n)
-  pic2show = kmeans.cluster_centers_[kmeans.labels_]
+      kmeans = KMeans(n_clusters=20, random_state=0).fit(pic_n)
+
+      pic2show = kmeans.cluster_centers_[kmeans.labels_]
 
 The program is then used to discriminate the various predicted clusters and isolate on the segmented item that we are trying to isloate. 
 
